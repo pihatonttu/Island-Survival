@@ -9,15 +9,19 @@ public class InventorySlots : MonoBehaviour
     public Image kuvake;
     public Text MaaraTeksti;
 
-    Item esine; //nykyinen esine tässtä slotissa
+    public Item esine; //nykyinen esine tässä paikassa
+    int maara; //Montako samaa esinettä tässä paikassa on
 
     //Lisää esine
     public void LisaaEsine(Item uusiEsine)
     {
+        //Lisätään uusi esine
         esine = uusiEsine;
 
+        //Näytetään esineen kuvake
         kuvake.sprite = esine.kuvake;
         kuvake.enabled = true;
+        
     }
 
     //Puhdista slotti
@@ -42,5 +46,12 @@ public class InventorySlots : MonoBehaviour
         {
             esine.Kayta();
         }
+    }
+    
+    //Näytä määrä
+    public void PinoaEsine(int montako)
+    {
+        maara = montako;
+        MaaraTeksti.text = maara.ToString();
     }
 }

@@ -27,9 +27,30 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    //Päivitä Repun UI
     public void UpdateUI()
     {
-        //SLOTS
+        //Etsitään paikat
+        InventorySlots[] paikat = GetComponentsInChildren<InventorySlots>();
+
+        
+        //Käydään läpi kaikki paikat
+        for (int i = 0; i < paikat.Length; i++)
+        {
+            if (i < inventory.esineet.Count)
+            {
+                paikat[i].LisaaEsine(inventory.esineet[i]);
+                if(inventory.esineidenMaarat[i] > 1)
+                {
+                    paikat[i].PinoaEsine(inventory.esineidenMaarat[i]);
+                }
+            }
+            else
+            {
+                paikat[i].PoistaSlot();
+            }
+        }
+        
 
 
     }
