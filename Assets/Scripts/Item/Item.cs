@@ -19,7 +19,8 @@ public class Item : ScriptableObject
     //Kutsutaan kun esinettä painetaan repussa
     public virtual void Kayta()
     {
-        //Mitä tehdään
+        Debug.Log(nimi + " Käytetty!");
+        //Määritellään ali classeissa mitä tehdään
     }
 
     //Poistetaan esine repusta

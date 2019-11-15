@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventorySlots : MonoBehaviour
 {
-
+    public Image tausta;
     public Image kuvake;
     public Text MaaraTeksti;
 
@@ -53,5 +53,14 @@ public class InventorySlots : MonoBehaviour
     {
         maara = montako;
         MaaraTeksti.text = maara.ToString();
+    }
+
+    public void Valittu()
+    {
+        tausta.color = new Color(125, 125, 0,25);
+    }
+    public void PoistaValinta()
+    {
+        tausta.color = new Color(255,255,255,25);
     }
 }
